@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cafe Order</string>
+    <string name="logo_cafe">Логотип кафе</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="hint_name">Введите ваше имя:</string>
+    <string name="hint_password">Введите пароль:</string>
+    <string name="button_create_order">Создать заказ.</string>
+    <string name="warning_fill_fields">Все поля должны быть заполнены</string>
+</resources>
