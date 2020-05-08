@@ -2,6 +2,7 @@ package com.kibekin.cafeorder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -87,12 +88,17 @@ public class CreateOrderActivity extends AppCompatActivity {
         } else {
             optionOfDrink = spinnerCoffee.getSelectedItem().toString();
         }
-        String order = String.format("Имя: %s\nПароль: %\nНапиток: %\nВид напитка: %s\n", name, password, drink, optionOfDrink);
+        String order = String.format(getString(R.string.order), name, password, drink, optionOfDrink);
         String additions;
         if (builderAdditions.length() > 0) {
-            additions = "Необходимые добавки: " + builderAdditions.toString();
+            additions = getString(R.string.need_additions) + builderAdditions.toString();
         } else {
             additions = "";
         }
+        String fullOrder = order + additions;
+        Intent intent = new Intent(this, OrderDetailActivity.class);
+        intent.putExtra("order", fullOrder);
+        startActivity(intent);
+
     }
 }
